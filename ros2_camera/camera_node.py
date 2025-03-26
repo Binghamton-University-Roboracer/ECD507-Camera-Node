@@ -8,7 +8,7 @@ class CameraNode(Node):
     def __init__(self):
         super().__init__('camera_node')
         self.publisher_ = self.create_publisher(Image, 'camera/image_raw', 10)
-        self.timer = self.create_timer(0.1, self.capture_image)  # 10Hz
+        self.timer = self.create_timer(0.03, self.capture_image)  # 20Hz
         self.bridge = CvBridge()
         self.cap = cv2.VideoCapture(4)  # Change to your camera index
 
